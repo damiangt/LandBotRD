@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandBotRD.Common", "LandBotRD.Common\LandBotRD.Common.csproj", "{00189B0C-3142-4FB5-9E79-7100C5B0C930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandBotRD.Web", "LandBotRD.Web\LandBotRD.Web.csproj", "{67CABD2A-66A9-4902-A844-785F87AA0500}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00189B0C-3142-4FB5-9E79-7100C5B0C930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00189B0C-3142-4FB5-9E79-7100C5B0C930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00189B0C-3142-4FB5-9E79-7100C5B0C930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00189B0C-3142-4FB5-9E79-7100C5B0C930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CABD2A-66A9-4902-A844-785F87AA0500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CABD2A-66A9-4902-A844-785F87AA0500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CABD2A-66A9-4902-A844-785F87AA0500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CABD2A-66A9-4902-A844-785F87AA0500}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E99B571-E6AF-45B3-BA96-E1BD34A4EF36}
+	EndGlobalSection
+EndGlobal
