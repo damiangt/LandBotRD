@@ -11,7 +11,7 @@ namespace LandBotRD.Web.Data.Entities
         public int Id { get; set; }
 
 
-        [MaxLength(10, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
+        [MaxLength(20, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
         [Required]
         public string Identificacion { get; set; }
 
@@ -25,6 +25,13 @@ namespace LandBotRD.Web.Data.Entities
         [MaxLength(10)]
         [Required]
         public string Celular { get; set; }
+
+
+
+
+        [MaxLength(20)]
+        public string IdentificacionLinea { get; set; }
+
 
 
 

@@ -22,7 +22,7 @@ namespace LandBotRD.Web.Controllers
         // GET: Clientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clientes.ToListAsync());
+            return View(await _context.Clientes.Where(e=>e.Estado== "Si me gustaría recibirla").ToListAsync());
         }
 
         // GET: Clientes/Details/5
@@ -54,7 +54,7 @@ namespace LandBotRD.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Identificacion,Nombres,Celular,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Identificacion,Nombres,Celular,IdentificacionLinea,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace LandBotRD.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Identificacion,Nombres,Celular,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Identificacion,Nombres,Celular,IdentificacionLinea,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
         {
             if (id != cliente.Id)
             {
