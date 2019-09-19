@@ -28,25 +28,25 @@ namespace LandBotRD.Web.Data.Entities
 
 
 
-
+        [Display(Name ="Id Bot")]
         [MaxLength(20)]
         public string IdentificacionLinea { get; set; }
 
 
 
-
+        [Display(Name = "Nombre Bot")]
         [MaxLength(50)]
         public string NombresLinea { get; set; }
 
 
 
-
+        [Display(Name = "Celular Bot")]
         [MaxLength(10)]
         public string CelularLinea { get; set; }
 
 
 
-
+        [Display(Name = "Hora Bot")]
         [MaxLength(8)]
         public string HoraLinea { get; set; }
 
@@ -60,7 +60,7 @@ namespace LandBotRD.Web.Data.Entities
 
 
 
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Estado { get; set; }
 
 

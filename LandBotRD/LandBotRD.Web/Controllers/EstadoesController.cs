@@ -22,7 +22,7 @@ namespace LandBotRD.Web.Controllers
         // GET: Estadoes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Estado.ToListAsync());
+            return View(await _context.Estados.ToListAsync());
         }
 
         // GET: Estadoes/Details/5
@@ -33,7 +33,7 @@ namespace LandBotRD.Web.Controllers
                 return NotFound();
             }
 
-            var estado = await _context.Estado
+            var estado = await _context.Estados
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (estado == null)
             {
@@ -73,7 +73,7 @@ namespace LandBotRD.Web.Controllers
                 return NotFound();
             }
 
-            var estado = await _context.Estado.FindAsync(id);
+            var estado = await _context.Estados.FindAsync(id);
             if (estado == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace LandBotRD.Web.Controllers
                 return NotFound();
             }
 
-            var estado = await _context.Estado
+            var estado = await _context.Estados
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (estado == null)
             {
@@ -139,15 +139,15 @@ namespace LandBotRD.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var estado = await _context.Estado.FindAsync(id);
-            _context.Estado.Remove(estado);
+            var estado = await _context.Estados.FindAsync(id);
+            _context.Estados.Remove(estado);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool EstadoExists(int id)
         {
-            return _context.Estado.Any(e => e.Id == id);
+            return _context.Estados.Any(e => e.Id == id);
         }
     }
 }

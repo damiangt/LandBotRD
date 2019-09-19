@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LandBotRD.Web</title>
+    <title>@ViewData["Title"] - LandBotRD</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,15 +26,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LandBotRD.Web</a>
+                <img src="~/images/ClaroMini.png" width="48" class="img-responsive" />
+                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LandBotRD</a>*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Clientes" asp-action="Index">Cliente</a></li>
-                    <li><a asp-area="" asp-controller="Estadoes" asp-action="Index">Estado</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
+                    <li><a asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a></li>
+                    <li><a asp-area="" asp-controller="Estadoes" asp-action="Index">Estados</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - LandBotRD.Web</p>
+            <p>&copy; 2019 - Zeebra</p>
         </footer>
     </div>
 

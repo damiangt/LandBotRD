@@ -14,6 +14,6 @@ namespace LandBotRD.Web.Data
 
         }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<LandBotRD.Web.Data.Entities.Estado> Estado { get; set; }
+        public DbSet<Estado> Estados { get; set; }
     }
 }
