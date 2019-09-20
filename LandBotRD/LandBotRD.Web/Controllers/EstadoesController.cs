@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LandBotRD.Web.Data;
 using LandBotRD.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LandBotRD.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class EstadoesController : Controller
     {
         private readonly DataContext _context;

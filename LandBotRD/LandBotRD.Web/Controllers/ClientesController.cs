@@ -7,16 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LandBotRD.Web.Data;
 using LandBotRD.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
+using LandBotRD.Web.Helpers;
 
 namespace LandBotRD.Web.Controllers
 {
+
+    [Authorize]
     public class ClientesController : Controller
     {
         private readonly DataContext _context;
+        private readonly IuserHelper _iuserHelper;
 
-        public ClientesController(DataContext context)
+        public ClientesController(DataContext context,
+            IuserHelper iuserHelper)
         {
             _context = context;
+            _iuserHelper = iuserHelper;
         }
 
         // GET: Clientes
@@ -54,10 +61,14 @@ namespace LandBotRD.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Identificacion,Nombres,Celular,IdentificacionLinea,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
+        public async Task<IActionResult> Create( Cliente cliente)
         {
             if (ModelState.IsValid)
             {
+                var user = await _iuserHelper.GetUserByEmailAsync(this.User.Identity.Name);
+                cliente.User = user;
+                cliente.FechaRegistro = DateTime.Now;
+                cliente.Url = $"https://landbot.io/u/H-145371-4U2IX33MF1CAMHVY/index.html?cliente={cliente.Identificacion}&nombre={cliente.Nombres}";
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -86,7 +97,7 @@ namespace LandBotRD.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Identificacion,Nombres,Celular,IdentificacionLinea,NombresLinea,CelularLinea,HoraLinea,FechaRegistro,Estado,Observaciones")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id,  Cliente cliente)
         {
             if (id != cliente.Id)
             {

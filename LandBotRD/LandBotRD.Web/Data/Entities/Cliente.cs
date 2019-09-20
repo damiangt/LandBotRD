@@ -9,7 +9,7 @@ namespace LandBotRD.Web.Data.Entities
     public class Cliente
     {
         public int Id { get; set; }
-
+     
 
         [MaxLength(20, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
         [Required]
@@ -68,6 +68,16 @@ namespace LandBotRD.Web.Data.Entities
 
         [MaxLength(500)]
         public string Observaciones { get; set; }
+
+
+
+        public User User { get; set; }
+
+
+
+
+        [MaxLength(200)]
+        public string Url { get; set; }
 
     }
 }

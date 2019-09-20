@@ -1,13 +1,10 @@
 ﻿using LandBotRD.Web.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LandBotRD.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -15,5 +12,7 @@ namespace LandBotRD.Web.Data
         }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Estado> Estados { get; set; }
+
+
     }
 }
